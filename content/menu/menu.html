@@ -1,0 +1,58 @@
+<div id="nav">
+    <div class="logo" >
+        <!--<img src="img/logo.png" alt="BackPackers" >-->
+    </div>        
+    <label id="showMenu" for="toggle">
+        <div class="container">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+      </div>
+    </label>
+    <input type="checkbox" id="toggle"/>
+    <div class="menu">
+        <ul>
+            <li id="last"><a href="#"><i class="material-icons">mail</i>&nbsp;Contáctanos</a></li>
+            <li><a href="#"><i class="material-icons">favorite</i>&nbsp;¿Por qué elegirnos?</a></li>
+            <li><a href="#"><i class="material-icons">nature_people</i>&nbsp;Experiencias</a></li>
+            <li><a href="#"><i class="material-icons">date_range</i>&nbsp;Planea tu viaje</a></li>
+            <li id="first"><a href="#"><i class="material-icons">explore</i>&nbsp;Destinos</a></li>
+        </ul>
+    </div>  
+</div>
+<div id="space"><!--fixed and relative--></div>
+<script>
+    $(document).ready(function(){ 
+        
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+            //alert("mobile");
+            $("#showMenu").click(function(){
+                document.getElementById("showMenu").classList.toggle("change");
+
+            });
+        }
+        else{
+            $("#showMenu").mouseover(function(){
+                document.getElementById("toggle").checked = true;
+                document.getElementById("showMenu").classList.add("change");
+      
+            });
+            $("#showMenu").mouseout(function(){
+                document.getElementById("toggle").checked = false;
+                document.getElementById("showMenu").classList.remove("change");
+      
+            });
+            $(".menu").mouseover(function(){
+                document.getElementById("toggle").checked = true;
+                document.getElementById("showMenu").classList.add("change");
+      
+            });
+            $(".menu").mouseout(function(){
+                document.getElementById("toggle").checked = false;
+                document.getElementById("showMenu").classList.remove("change");
+     
+            });
+        }
+
+    });
+</script>
